@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кредитный калькулятор - Рассчитайте кредит онлайн<</title>
+    <title>Кредитный калькулятор - Рассчитайте кредит онлайн</title>
     <meta name="description" content="Используйте наш удобный кредитный калькулятор, чтобы рассчитать ежемесячные платежи и переплату по кредиту. Быстрый и простой онлайн расчет.">
     <meta name="keywords" content="кредитный калькулятор, расчет кредита, кредит, процентная ставка, переплата по кредиту">
 
@@ -40,110 +40,108 @@
         }
     </script>
 </head>
-        <body class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 min-h-screen flex items-center justify-center">
-            <div class="bg-white bg-opacity-90 backdrop-blur-lg p-8 rounded-2xl shadow-xl max-w-lg w-full">
-                <h1 class="text-4xl font-extrabold text-center text-gray-900 mb-6">Кредитный калькулятор</h1>
+<body class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 min-h-screen flex items-center justify-center p-4 sm:p-0">
+    <div class="bg-white bg-opacity-90 backdrop-blur-lg p-6 sm:p-8 rounded-2xl shadow-xl max-w-md sm:max-w-lg w-full">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-4 sm:mb-6">Кредитный калькулятор</h1>
 
-                <div class="space-y-4">
-                    <div>
-                        <label for="loanAmount" class="block text-gray-700 font-semibold mb-1">Сумма кредита (руб):</label>
-                        <input type="text" id="loanAmount" placeholder="Введите сумму кредита" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-200" oninput="formatNumber(this)">
-                    </div>
-
-                    <div>
-                        <label for="interestRate" class="block text-gray-700 font-semibold mb-1">Процентная ставка (% годовых):</label>
-                        <input type="number" id="interestRate" placeholder="Введите процентную ставку" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-200">
-                    </div>
-
-                    <div>
-                        <label for="loanTerm" class="block text-gray-700 font-semibold mb-1">Срок кредита (месяцы):</label>
-                        <input type="number" id="loanTerm" placeholder="Введите срок кредита в месяцах" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-200">
-                    </div>
-
-                    <div>
-                        <label for="loanType" class="block text-gray-700 font-semibold mb-1">Тип кредита:</label>
-                        <select id="loanType" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-200">
-                            <option value="annuity">Аннуитетный</option>
-                            <option value="differentiated">Дифференцированный</option>
-                        </select>
-                    </div>
-                </div>
-
-                <button onclick="calculateLoan()" class="mt-6 w-full bg-indigo-500 text-white font-bold py-3 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition duration-300">
-                    Рассчитать платеж
-                </button>
-
-                <div class="mt-6" id="result"></div>
+        <div class="space-y-4">
+            <div>
+                <label for="loanAmount" class="block text-gray-700 font-semibold mb-1">Сумма кредита (руб):</label>
+                <input type="text" id="loanAmount" placeholder="Введите сумму кредита" class="w-full px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-200" oninput="formatNumber(this)">
             </div>
 
-            <script>
-                function formatNumber(input) {
-                    // Удаляем все пробелы и символы, кроме чисел
-                    let value = input.value.replace(/\s+/g, '').replace(/\D/g, '');
+            <div>
+                <label for="interestRate" class="block text-gray-700 font-semibold mb-1">Процентная ставка (% годовых):</label>
+                <input type="number" id="interestRate" placeholder="Введите процентную ставку" class="w-full px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-200">
+            </div>
 
-                    // Форматируем число, добавляя пробелы в качестве разделителей тысяч
-                    input.value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+            <div>
+                <label for="loanTerm" class="block text-gray-700 font-semibold mb-1">Срок кредита (месяцы):</label>
+                <input type="number" id="loanTerm" placeholder="Введите срок кредита в месяцах" class="w-full px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-200">
+            </div>
+
+            <div>
+                <label for="loanType" class="block text-gray-700 font-semibold mb-1">Тип кредита:</label>
+                <select id="loanType" class="w-full px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-200">
+                    <option value="annuity">Аннуитетный</option>
+                    <option value="differentiated">Дифференцированный</option>
+                </select>
+            </div>
+        </div>
+
+        <button onclick="calculateLoan()" class="mt-6 w-full bg-indigo-500 text-white font-bold py-2 sm:py-3 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition duration-300">
+            Рассчитать платеж
+        </button>
+
+        <div class="mt-6" id="result"></div>
+    </div>
+
+    <script>
+        function formatNumber(input) {
+            // Удаляем все пробелы и символы, кроме чисел
+            let value = input.value.replace(/\s+/g, '').replace(/\D/g, '');
+            // Форматируем число, добавляя пробелы в качестве разделителей тысяч
+            input.value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        }
+
+        function formatNumberForResult(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        }
+
+        function calculateLoan() {
+            var loanAmount = parseFloat(document.getElementById('loanAmount').value.replace(/\s+/g, ''));// Убираем пробелы перед расчетом
+            var interestRate = parseFloat(document.getElementById('interestRate').value);
+            var loanTerm = parseInt(document.getElementById('loanTerm').value);
+            var loanType = document.getElementById('loanType').value;
+
+            if (!loanAmount || !interestRate || !loanTerm) {
+                alert('Пожалуйста, заполните все поля.');
+                return;
+            }
+
+            var monthlyInterestRate = (interestRate / 100) / 12;
+            var totalPayment = 0;
+            var resultText = '';
+
+            if (loanType === 'annuity') {
+                var monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -loanTerm));
+                var overpayment = (monthlyPayment * loanTerm) - loanAmount;
+
+                resultText = `
+                    <div class="p-4 bg-green-100 border-l-4 border-green-500 text-green-700">
+                        <p class="font-bold text-xl">Результаты расчета</p>
+                        <p>Ежемесячный аннуитетный платеж: <span class="text-lg font-semibold">${formatNumberForResult(monthlyPayment.toFixed(2))} руб.</span></p>
+                        <p>Переплата по кредиту: <span class="text-lg font-semibold">${formatNumberForResult(overpayment.toFixed(2))} руб.</span></p>
+                    </div>
+                `;
+            } else if (loanType === 'differentiated') {
+                resultText = '<div class="p-4 bg-blue-100 border-l-4 border-blue-500 text-blue-700"><p class="font-bold text-xl">Дифференцированные платежи по месяцам:</p>';
+                for (var i = 1; i <= loanTerm; i++) {
+                    var mainDebt = loanAmount / loanTerm;
+                    var interestPayment = (loanAmount - (loanAmount / loanTerm) * (i - 1)) * monthlyInterestRate;
+                    var monthlyPayment = mainDebt + interestPayment;
+                    totalPayment += monthlyPayment;
+                    resultText += `<p>Месяц ${i}: <span class="text-lg font-semibold">${formatNumberForResult(monthlyPayment.toFixed(2))} руб.</span></p>`;
                 }
+                var overpayment = totalPayment - loanAmount;
+                resultText += `
+                    <p class="mt-4">Переплата по кредиту: <span class="text-lg font-semibold">${formatNumberForResult(overpayment.toFixed(2))} руб.</span></p>
+                    </div>
+                `;
+            }
 
-                function formatNumberForResult(num) {
-                    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-                }
-
-                function calculateLoan() {
-                    var loanAmount = parseFloat(document.getElementById('loanAmount').value.replace(/\s+/g, '')); // Убираем пробелы перед расчетом
-                    var interestRate = parseFloat(document.getElementById('interestRate').value);
-                    var loanTerm = parseInt(document.getElementById('loanTerm').value);
-                    var loanType = document.getElementById('loanType').value;
-
-                    if (!loanAmount || !interestRate || !loanTerm) {
-                        alert('Пожалуйста, заполните все поля.');
-                        return;
-                    }
-
-                    var monthlyInterestRate = (interestRate / 100) / 12;
-                    var totalPayment = 0;
-                    var resultText = '';
-
-                    if (loanType === 'annuity') {
-                        var monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -loanTerm));
-                        var overpayment = (monthlyPayment * loanTerm) - loanAmount;
-
-                        resultText = `
-                            <div class="p-4 bg-green-100 border-l-4 border-green-500 text-green-700">
-                                <p class="font-bold text-xl">Результаты расчета</p>
-                                <p>Ежемесячный аннуитетный платеж: <span class="text-lg font-semibold">${formatNumberForResult(monthlyPayment.toFixed(2))} руб.</span></p>
-                                <p>Переплата по кредиту: <span class="text-lg font-semibold">${formatNumberForResult(overpayment.toFixed(2))} руб.</span></p>
-                            </div>
-                        `;
-                    } else if (loanType === 'differentiated') {
-                        resultText = '<div class="p-4 bg-blue-100 border-l-4 border-blue-500 text-blue-700"><p class="font-bold text-xl">Дифференцированные платежи по месяцам:</p>';
-                        for (var i = 1; i <= loanTerm; i++) {
-                            var mainDebt = loanAmount / loanTerm;
-                            var interestPayment = (loanAmount - (loanAmount / loanTerm) * (i - 1)) * monthlyInterestRate;
-                            var monthlyPayment = mainDebt + interestPayment;
-                            totalPayment += monthlyPayment;
-                            resultText += `<p>Месяц ${i}: <span class="text-lg font-semibold">${formatNumberForResult(monthlyPayment.toFixed(2))} руб.</span></p>`;
-                        }
-                        var overpayment = totalPayment - loanAmount;
-                        resultText += `
-                            <p class="mt-4">Переплата по кредиту: <span class="text-lg font-semibold">${formatNumberForResult(overpayment.toFixed(2))} руб.</span></p>
-                            </div>
-                        `;
-                    }
-
-                    document.getElementById('result').innerHTML = resultText;
-                }
-
-                // Регистрация Service Worker
-                if ('serviceWorker' in navigator) {
-                  window.addEventListener('load', function() {
-                    navigator.serviceWorker.register('/credit-calculator/service-worker.js').then(function(registration) {
-                      console.log('Service Worker зарегистрирован с областью: ', registration.scope);
-                    }, function(err) {
-                      console.log('Ошибка при регистрации Service Worker: ', err);
-                    });
-                  });
-                }
+            document.getElementById('result').innerHTML = resultText;
+        }
+        // Регистрация Service Worker
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/credit-calculator/service-worker.js').then(function(registration) {
+              console.log('Service Worker зарегистрирован с областью: ', registration.scope);
+            }, function(err) {
+              console.log('Ошибка при регистрации Service Worker: ', err);
+            });
+          });
+        }
     </script>
-    </body>
+</body>
 </html>
