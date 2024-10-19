@@ -2,18 +2,18 @@
     "name": "��������� �����������",
     "short_name": "�����������",
     "description": "������� ���������� ��� ������� �������",
-    "start_url": "/credit-calculator",
+    "start_url": "/credit-calculator/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#4a90e2",
     "icons": [
         {
-            "src": "/icons/icon-192x192.png",
+            "src": "/credit-calculator/icons/icon-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/icons/icon-512x512.png",
+            "src": "/credit-calculator/icons/icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }

@@ -96,7 +96,7 @@
         // Регистрация Service Worker
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                navigator.serviceWorker.register('/credit-calculator/service-worker.js').then(function(registration) {
                     console.log('Service Worker зарегистрирован с областью: ', registration.scope);
                 }, function(err) {
                     console.log('Ошибка при регистрации Service Worker: ', err);
