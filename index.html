@@ -18,7 +18,7 @@
         <div class="space-y-4">
             <div>
                 <label for="loanAmount" class="block text-gray-700 font-semibold mb-1">Сумма кредита (руб):</label>
-                <input type="number" id="loanAmount" placeholder="Введите сумму кредита" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-200">
+                <input type="text" id="loanAmount" placeholder="Введите сумму кредита" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-200" oninput="formatNumber(this)">
             </div>
 
             <div>
@@ -57,7 +57,7 @@
         }
 
         function calculateLoan() {
-            var loanAmount = parseFloat(document.getElementById('loanAmount').value);//.replace(/\s+/g, '')); // Убираем пробелы перед расчетом
+            var loanAmount = parseFloat(document.getElementById('loanAmount').value.replace(/\s+/g, '')); // Убираем пробелы перед расчетом
             var interestRate = parseFloat(document.getElementById('interestRate').value);
             var loanTerm = parseInt(document.getElementById('loanTerm').value);
             var loanType = document.getElementById('loanType').value;
