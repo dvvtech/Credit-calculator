@@ -1,4 +1,4 @@
-const CACHE_NAME = 'credit-calculator-cache-v7';// Измените версию кэша при каждом обновлении
+const CACHE_NAME = 'credit-calculator-cache-v8';// Измените версию кэша при каждом обновлении
 const urlsToCache = [
   '/credit-calculator/',
   '/credit-calculator/index.html',
@@ -38,7 +38,7 @@ self.addEventListener('activate', function(event) {
     })
   );
 
-  //Принудительная активация нового Service Worker
+  //Принудительная активация нового Service Worker к текущим клиентам
   return self.clients.claim();
 
 });
