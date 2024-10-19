@@ -1,4 +1,4 @@
-const CACHE_NAME = 'credit-calculator-cache-v6';// Измените версию кэша при каждом обновлении
+const CACHE_NAME = 'credit-calculator-cache-v7';// Измените версию кэша при каждом обновлении
 const urlsToCache = [
   '/credit-calculator/',
   '/credit-calculator/index.html',
