@@ -56,6 +56,10 @@
             input.value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
         }
 
+        function formatNumberForResult(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        }
+
         function calculateLoan() {
             var loanAmount = parseFloat(document.getElementById('loanAmount').value.replace(/\s+/g, '')); // Убираем пробелы перед расчетом
             var interestRate = parseFloat(document.getElementById('interestRate').value);
@@ -78,8 +82,8 @@
                 resultText = `
                     <div class="p-4 bg-green-100 border-l-4 border-green-500 text-green-700">
                         <p class="font-bold text-xl">Результаты расчета</p>
-                        <p>Ежемесячный аннуитетный платеж: <span class="text-lg font-semibold">${monthlyPayment.toFixed(2)} руб.</span></p>
-                        <p>Переплата по кредиту: <span class="text-lg font-semibold">${overpayment.toFixed(2)} руб.</span></p>
+                        <p>Ежемесячный аннуитетный платеж: <span class="text-lg font-semibold">${formatNumberForResult(monthlyPayment.toFixed(2))} руб.</span></p>
+                        <p>Переплата по кредиту: <span class="text-lg font-semibold">${formatNumberForResult(overpayment.toFixed(2))} руб.</span></p>
                     </div>
                 `;
             } else if (loanType === 'differentiated') {
@@ -89,11 +93,11 @@
                     var interestPayment = (loanAmount - (loanAmount / loanTerm) * (i - 1)) * monthlyInterestRate;
                     var monthlyPayment = mainDebt + interestPayment;
                     totalPayment += monthlyPayment;
-                    resultText += `<p>Месяц ${i}: <span class="text-lg font-semibold">${monthlyPayment.toFixed(2)} руб.</span></p>`;
+                    resultText += `<p>Месяц ${i}: <span class="text-lg font-semibold">${formatNumberForResult(monthlyPayment.toFixed(2))} руб.</span></p>`;
                 }
                 var overpayment = totalPayment - loanAmount;
                 resultText += `
-                    <p class="mt-4">Переплата по кредиту: <span class="text-lg font-semibold">${overpayment.toFixed(2)} руб.</span></p>
+                    <p class="mt-4">Переплата по кредиту: <span class="text-lg font-semibold">${formatNumberForResult(overpayment.toFixed(2))} руб.</span></p>
                     </div>
                 `;
             }
