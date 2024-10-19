@@ -1,10 +1,10 @@
 const CACHE_NAME = 'credit-calculator-cache-v1';
 const urlsToCache = [
   '/',
-  '/index.html',
-  '/manifest.json',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png'
+  '/credit-calculator/index.html',
+  '/credit-calculator/manifest.json',
+  '/credit-calculator/icons/icon-192x192.png',
+  '/credit-calculator/icons/icon-512x512.png'
 ];
 
 // Установка Service Worker
