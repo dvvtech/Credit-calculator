@@ -1,7 +1,7 @@
 {
-    "name": "��������� �����������",
-    "short_name": "�����������",
-    "description": "������� ���������� ��� ������� �������",
+    "name": "Кредитный калькулятор",
+    "short_name": "Калькулятор",
+    "description": "Простое приложение для расчета кредита",
     "start_url": "/credit-calculator/",
     "display": "standalone",
     "background_color": "#ffffff",
