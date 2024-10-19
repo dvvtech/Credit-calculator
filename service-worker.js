@@ -1,4 +1,4 @@
-const CACHE_NAME = 'credit-calculator-cache-v1';
+const CACHE_NAME = 'credit-calculator-cache-v2';
 const urlsToCache = [
   '/',
   '/credit-calculator/index.html',
