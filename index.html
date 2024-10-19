@@ -57,7 +57,7 @@
         }
 
         function calculateLoan() {
-            var loanAmount = parseFloat(document.getElementById('loanAmount').value.replace(/\s+/g, '')); // Убираем пробелы перед расчетом
+            var loanAmount = parseFloat(document.getElementById('loanAmount').value);//.replace(/\s+/g, '')); // Убираем пробелы перед расчетом
             var interestRate = parseFloat(document.getElementById('interestRate').value);
             var loanTerm = parseInt(document.getElementById('loanTerm').value);
             var loanType = document.getElementById('loanType').value;
@@ -103,5 +103,14 @@
 
         // Регистрация Service Worker
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/credit-calculator/service-worker.js').then(function(registration) {
+              console.log('Service Worker зарегистрирован с областью: ', registration.scope);
+            }, function(err) {
+              console.log('Ошибка при регистрации Service Worker: ', err);
+            });
+          });
+        }
+    </script>
+</body>
+</html>
