@@ -41,26 +41,36 @@
     </script>
 
     <script>
-        // Функция для вызова метрики
-        /*function incrementUserCount() {
-            
-            const url = 'http://localhost:5000/api/metrics/increment';
+        // Функция для записи визита пользователя
+        /*function recordUserVisit(userId) {
+            const url = 'http://localhost:5000/api/metrics/visit'; // Укажите ваш API URL
 
-            // Вызываем маршрут, но не обрабатываем ответ
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                        console.error('Ошибка при вызове метрики:', response.statusText);
-                    }
-                })
-                .catch(error => {
-                    console.error('Ошибка сети:', error);
-                });
+            // Отправляем POST-запрос с идентификатором пользователя
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userId) // Отправляем идентификатор в теле запроса
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ошибка при записи визита: ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Визит записан успешно:', data);
+            })
+            .catch(error => {
+                console.error('Ошибка сети:', error);
+            });
         }
 
         // Вызываем функцию при загрузке страницы
         window.onload = function() {
-            incrementUserCount();
+            const userId = 12345;
+            recordUserVisit(userId);
         };*/
     </script>
 
